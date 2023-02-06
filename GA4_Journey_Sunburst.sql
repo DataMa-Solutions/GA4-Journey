@@ -32,7 +32,11 @@ with date_range as (
  SELECT
     device.category as Device,
     concat(case when user_pseudo_id is null then "_" else user_pseudo_id end, (select value.int_value from unnest(event_params) where key = 'ga_session_id')) as Session_Id,
-    STRING_AGG((select value.string_value from unnest(event_params) where key = 'content_group3' and event_name = "page_view"), "-" ORDER BY event_timestamp) as Journey,
+    STRING_AGG((select value.string_value 
+                from unnest(event_params) 
+                where key = 'content_group' -- <--- Replace by the right key that you are using in you're tracking for page type aggregation
+                      and event_name = "page_view"
+                ), "-" ORDER BY event_timestamp) as Journey,
     count(distinct case when event_name IN ('in_app_purchase', 'purchase') then concat(case when user_pseudo_id is null then "_" else user_pseudo_id end, cast(event_timestamp as string)) end) as purchases
  FROM
     `your_project.your_GA4_ID.events_20*` -- <--- Change your project and GA4 table ID here
