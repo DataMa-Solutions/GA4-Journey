@@ -14,9 +14,9 @@ FIRST WRITTEN ON: 2023-02-03
 BY: DATAMA - GUILLAUME@DATAMA.IO
 LICENCE:MIT
 NOTE: This query has been written for helping analysing Journeys from Google Analytics 4
-      Please read more instructions on https://github.com/DataMa-Solutions/GA4-GA3
+      Please read more instructions on https://github.com/DataMa-Solutions/GA4-Journey
       DataMa is a SaaS tool that helps finding insights and generate business actions based on data.
-      Contact us for automatic analysis of your Journeys with sunbursts and attribution model in our app, as and extension of visualisation Tools (Looker Studio, Tableau, PowerBI)
+      Contact us for automatic analysis of your Journeys with sunbursts and attribution model in our app, as a SaaS or as an extension of visualisation Tools (Looker Studio, Tableau, PowerBI)
 */
 
 
